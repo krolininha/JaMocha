@@ -1,0 +1,389 @@
+@charset "UTF-8";
+/* Menu area */
+* { 
+  background-color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+.d-flex {
+  display: flex !important;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  position: absolute;
+  left: 1rem;
+
+  position: static; 
+  margin-bottom: 0.5rem;
+  text-decoration: none;
+  color: white;
+}
+.nav-link:hover{
+  background-color: #eec098;
+  transition: 0.4s;
+}
+
+
+
+
+
+/* GENERAL */
+
+main {
+  min-width: 300px;
+  max-width: 1200px;
+  padding: 20px;
+  margin: auto;
+
+}
+body {
+  font-family: "Fragment Mono", monospace;
+  font-weight: 300;
+  font-style: normal;
+  background-color: rgb(6, 6, 6);
+  color: white;
+}
+h1 {
+  background-color: rgb(8, 8, 8);
+  color: rgb(170, 96, 57);
+  text-justify:auto;
+  text-align: center;
+  padding: 30px;
+}
+h2 {
+  text-align: center;
+  padding: 30px;
+  
+}
+p {
+  padding: 20px;
+  font-size: 1.4em;
+}
+
+
+.nav-link {
+  color: white;
+  font-size: 1.8em;
+}
+
+.nav-link:hover {
+  background-color: #eec098;
+  transition: 0.4s;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+/* ABOUT US */
+#follow {
+  padding-top: 20px;
+}
+#follow img {
+  border-radius: 50%;
+  border: 0.5px solid black;
+  box-shadow: 2px 2px 5px rgba(255, 255, 255, 0.683);
+  box-sizing: border-box;
+  
+}
+#follow img:hover {
+  border: 2px solid rgba(255, 255, 255, 0.722);
+  transform: translate(-3px , -3px);
+  box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.277);
+  transition: transform 0.3s, border 0.5s;
+}
+
+#contact {
+  line-height: 2em;
+}
+#contact img {
+  border-radius: 50%;
+  border: 0.5px solid rgba(255, 255, 255, 0.537);
+  
+}
+
+/* BENEFITS HOME */
+.benefits-section {
+  position: relative;
+  padding: 50px 0;
+  margin: 80px 0;
+  border: 2px solid #333;
+  border-radius: 15px;
+  background-color: #080808;
+}
+
+.benefits-section::before {
+  content: "Why Choose JaMocha";
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #000;
+  padding: 0 20px;
+  color: #aa6039;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.benefits-section::after {
+  content: "";
+  position: absolute;
+  bottom: 20px;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #aa6039, transparent);
+}
+
+.benefit-card {
+  background-color: #0a0a0a;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 25px;
+  height: 100%;
+  transition: transform 0.3s ease, border-color 0.3s;
+}
+
+.benefit-card:hover {
+  transform: translateY(-10px);
+  border-color: #eec098;
+}
+
+.benefit-icon {
+  font-size: 2.5rem;
+  color: #aa6039;
+  margin-bottom: 15px;
+  transition: color 0.3s ease;
+}
+
+.benefit-card:hover .benefit-icon {
+  color: #eec098;
+}
+
+.benefit-title {
+  color: #eec098;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+
+.benefit-text {
+  color: #b0b0b0;
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .benefits-section {
+      margin: 60px 15px;
+  }
+}
+
+/* INDEX */
+
+.review{
+  color: #d2691e;
+}
+
+
+
+
+/* OURCOFFEE AND INDEX / CARROUSEL */
+.col-md-5 {
+  text-align: justify;
+}
+
+/* OURCOFFEE INDEX ABOUTUS */
+.algin-items-start {
+  align-items: baseline;
+}
+
+
+/* OURCOFFEE */
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+/* CAFFEE MENU */
+
+body {
+  font-family: "Fragment Mono", monospace;
+  background-color: #000;
+  color: white;
+}
+
+.card {
+  background-color: #080808;
+  border: 1px solid #333;
+  transition: transform 0.3s ease, border-color 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: #eec098;
+}
+
+.card-title {
+  color: white;
+  font-weight: bold;
+}
+
+.price {
+  color: #aa6039;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.popular-badge {
+  background-color: #aa6039;
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 10px;
+  border-radius: 12px;
+}
+
+.feature-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.feature-item {
+  color: #b0b0b0;
+  margin-bottom: 8px;
+}
+
+.feature-item::before {
+  content: "✓";
+  color: #eec098;
+  margin-right: 8px;
+}
+
+.btn-more-info {
+  background: transparent;
+  border: 1px solid #333;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.btn-more-info:hover {
+  background-color: #aa6039;
+  border-color: #eec098;
+  color: white;
+}
+
+
+/* Background global para todas as páginas */
+body {
+  font-family: "Fragment Mono", monospace;
+  font-weight: 300;
+  font-style: normal;
+  color: white;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.92), rgba(0, 0, 0, 0.87)),
+    url('https://res.cloudinary.com/dx2gssfoi/image/upload/v1730397151/pexels-nietjuh-796609_v8wev7.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+}
+
+/* Overlay para melhorar a legibilidade em todas as páginas */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(0,0,0,0.7), transparent);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Ajustes para melhor legibilidade dos cards em todas as páginas */
+.card {
+  background-color: rgba(8, 8, 8, 0.85);
+  backdrop-filter: blur(5px);
+}
+
+/* Ajuste para o container principal em todas as páginas */
+main, [role="main"] {
+  position: relative;
+  z-index: 1;
+}
+
+/* Ajuste específico para seções com fundo */
+.bg-dark {
+  background-color: rgba(8, 8, 8, 0.85) !important;
+  backdrop-filter: blur(5px);
+}
+
+/* Ajuste para melhor legibilidade do texto */
+p {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Ajuste para títulos */
+h1, h2, h3, h4, h5, h6 {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Ajuste para o menu de navegação */
+.d-flex {
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 1000;
+}
+
+/* Ajuste para elementos que precisam de fundo transparente */
+.transparent-bg {
+  background-color: rgba(8, 8, 8, 0.85);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px 0;
+}
+
+/* Ajuste para o rodapé e outras seções escuras */
+#contact, .footer {
+  background-color: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(10px);
+}
+
+/* Otimização para dispositivos móveis */
+@media (max-width: 768px) {
+  body {
+      background-attachment: scroll;
+  }
+  
+  .card, .transparent-bg {
+      backdrop-filter: blur(10px);
+  }
+}
+
+/* Ajuste para formulários e inputs */
+input, textarea, select {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border-color: #333 !important;
+  color: white !important;
+}
+
+/* Ajuste para o hover dos cards */
+.card:hover {
+  background-color: rgba(8, 8, 8, 0.95);
+}
+
+
+
+
+
