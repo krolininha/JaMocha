@@ -470,7 +470,7 @@ input, textarea, select {
   position: relative;
   max-width: 1200px;
   
-  padding-bottom: 38%; /* Proporção 16:9 */
+  padding-bottom: 45%; /* Proporção 16:9 */
   height: 0;
   margin: auto;
 }
