@@ -70,14 +70,32 @@
 
 
 /* GENERAL */
-
-main {
+main, [role="main"] {
+  position: relative;
+  z-index: 1;
   min-width: 300px;
   max-width: 1200px;
   padding: 20px;
   margin: auto;
-
 }
+
+/* Ajuste específico para seções com fundo */
+.bg-dark {
+  background-color: rgba(8, 8, 8, 0.85) !important;
+  backdrop-filter: blur(5px);
+}
+
+/* Ajuste para melhor legibilidade do texto */
+p {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Ajuste para títulos */
+h1, h2, h3, h4, h5, h6 {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
 body {
   font-family: "Fragment Mono", monospace;
   font-weight: 300;
@@ -251,21 +269,18 @@ p {
 
 /* CAFFEE MENU */
 
-body {
-  font-family: "Fragment Mono", monospace;
-  background-color: #000;
-  color: white;
-}
 
 .card {
-  background-color: #080808;
   border: 1px solid #333;
   transition: transform 0.3s ease, border-color 0.3s;
+  background-color: rgba(8, 8, 8, 0.85);
+  backdrop-filter: blur(5px);
 }
 
 .card:hover {
   transform: translateY(-5px);
   border-color: #eec098;
+  
 }
 
 .card-title {
@@ -346,33 +361,9 @@ body::before {
   z-index: -1;
 }
 
-/* Ajustes para melhor legibilidade dos cards em todas as páginas */
-.card {
-  background-color: rgba(8, 8, 8, 0.85);
-  backdrop-filter: blur(5px);
-}
 
 /* Ajuste para o container principal em todas as páginas */
-main, [role="main"] {
-  position: relative;
-  z-index: 1;
-}
 
-/* Ajuste específico para seções com fundo */
-.bg-dark {
-  background-color: rgba(8, 8, 8, 0.85) !important;
-  backdrop-filter: blur(5px);
-}
-
-/* Ajuste para melhor legibilidade do texto */
-p {
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-/* Ajuste para títulos */
-h1, h2, h3, h4, h5, h6 {
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
 
 /* Ajuste para o menu de navegação */
 .d-flex {
