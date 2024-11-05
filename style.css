@@ -3,13 +3,22 @@
 * { 
   background-color: #000;
   font-family: Arial, Helvetica, sans-serif;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 
+}
+body {
+  padding-top: 100px; /* Ajuste este valor conforme a altura do seu menu */
 }
 
 .navbar {
   background-color: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(5px);
-  padding: 15px 0;
+    backdrop-filter: blur(5px);
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1030; /* Valor alto para garantir que fique sobre outros elementos */
 }
 
 .navbar-brand.logo {
@@ -457,16 +466,23 @@ input, textarea, select {
 }
 
 /* Estilos para o Google Maps responsivo */
-.map-container {
+/* .map-container {
   position: relative;
   max-width: 1200px;
   
-  padding-bottom: 45%; /* Proporção 16:9 */
+  padding-bottom: 45%;
   height: 0;
   margin: auto;
+} */
+
+.map-container {
+  position: relative;
+  max-width: 1200px;
+  height: 400px; /* Altura fixa mais adequada para mobile */
+  margin: 20px auto;
 }
 
-.map-container iframe {
+/* .map-container iframe {
   position: absolute;
   top: 0;
   left: 0;
@@ -474,10 +490,20 @@ input, textarea, select {
   height: 600px;
   border: none;
   border-radius: 10px;
+} */
+
+.map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 10px;
 }
 
 /* Estilos para as informações de contato */
-.row {
+/* .row {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
   display: flex;
@@ -485,7 +511,7 @@ input, textarea, select {
   max-width: 1200px;
   margin: auto;
   text-align: center;
-}
+} */
 
 
 .contact-info {
@@ -522,7 +548,7 @@ input, textarea, select {
 }
 
 /* Responsividade */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .newsletter-section {
       padding: 20px 10px;
   }
@@ -532,7 +558,7 @@ input, textarea, select {
   }
 
   .map-container {
-      padding-bottom: 75%; /* Proporção mais alta para mobile */
+      padding-bottom: 75%;
   }
 
   .input-group {
@@ -543,6 +569,178 @@ input, textarea, select {
   .input-group input,
   .input-group button {
       width: 100%;
+  }
+} */
+
+@media (max-width: 768px) {
+  .map-container {
+      height: 300px; /* Altura menor para mobile */
+  }
+
+  .contact-info {
+      margin: 10px 0;
+  }
+
+  /* Ajuste do texto para mobile */
+  p {
+      font-size: 1.1em;
+      padding: 10px;
+  }
+
+  /* Ajuste dos títulos para mobile */
+  h1 {
+      font-size: 1.8em;
+      padding: 15px;
+  }
+
+  h2, h3 {
+      font-size: 1.4em;
+      padding: 10px;
+  }
+}
+
+/* Estilos para o container e row */
+/*
+.container {
+  padding: 0 15px;
+  max-width: 1200px;
+  margin: 0 auto;
+}*/
+
+.container {
+  padding: 15px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow-x: hidden; /* Previne scroll horizontal */
+}
+
+/* .row {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+} */
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+  padding: 15px;
+}
+
+/* Estilos para as informações de contato */
+/* .contact-info {
+  background-color: rgba(8, 8, 8, 0.85);
+  padding: 30px;
+  border-radius: 10px;
+  height: 100%;
+  transition: transform 0.3s ease;
+} */
+
+.contact-info {
+  background-color: rgba(8, 8, 8, 0.85);
+  padding: 20px;
+  border-radius: 10px;
+  margin: 10px;
+  width: 100%;
+}
+
+.contact-info:hover {
+  transform: translateY(-5px);
+}
+
+.contact-info h3 {
+  color: #aa6039;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.contact-info p {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Estilos para redes sociais */
+.social-media {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.social-media img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s;
+  border-radius: 50%;
+}
+
+.social-media img:hover {
+  transform: translateY(-5px);
+}
+
+@media (max-width: 480px) {
+  .container {
+      padding: 10px;
+  }
+
+  .map-container {
+      height: 250px;
+  }
+
+  .contact-info {
+      padding: 15px;
+  }
+
+  /* Ajuste das redes sociais */
+  .social-media {
+      gap: 15px;
+  }
+
+  .social-media img {
+      width: 30px;
+      height: 30px;
+  }
+}
+
+/* Responsividade */
+/* @media (max-width: 768px) {
+  .container {
+      padding: 0 10px;
+  }
+
+  .contact-info {
+      padding: 20px;
+      margin-bottom: 20px;
+  }
+
+  .contact-info h3 {
+      font-size: 1.3rem;
+  }
+
+  .contact-info p {
+      font-size: 1rem;
+  }
+
+  /* .row {
+      margin: 0;
+  } */
+} */
+
+/* Ajustes para telas muito pequenas */
+@media (max-width: 576px) {
+  .social-media {
+      gap: 15px;
+  }
+
+  .social-media img {
+      width: 35px;
+      height: 35px;
   }
 }
 
