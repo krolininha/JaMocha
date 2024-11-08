@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head> 
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../static/image/favicon.ico" type="image/x-icon">
@@ -12,8 +12,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-     <!-- Link Boostrap End-->
-    <title>JaMocha</title>
+    <!-- Link Boostrap End-->
+    <title>JaMocha</title> 
     <link rel="stylesheet" href="../static/style.css">
     <!--Googlefont beginn-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,219 +21,53 @@
     <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&display=swap" rel="stylesheet">
     <!--Googlefont end-->
 </head>
- 
+
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg fixed-top">
-            <div class="container">
-                <a class="navbar-brand logo" href="#">JaMocha</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
-                        data-bs-target="#navbarNav" aria-controls="navbarNav" 
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="menu.html">Menu</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="ourcoffee.html">Our Coffee</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="aboutus.html">About Us</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        {% extends "base.html" %}
+
+        {% block title %}JaMocha - Home{% endblock %}
 
         <h1>Best Selling Item</h1>
-    </header>
 
+    </header>
+    {% block content %}
     <main>
         <p>
             Our preferred, straightforward and also unique method of developing cool coffee.
         </p>
         <!-- Menu Items -->
-        <div class="row g-4">
-            <!-- Cappuccino -->
-            <div class="col-md-6 col-lg-3">
-                <div class="card h-100">
-                    <img src="https://res.cloudinary.com/dx2gssfoi/image/upload/c_crop,ar_3:4/v1730310933/pexels-helder-quiala-434379851-15293893_pcgyqj.jpg"
-                        class="card-img-top" alt="Cappuccino">
-                    <div class="card-body">
-                        <h5 class="card-title">Cappuccino</h5>
-                        <div class="price mb-2">$4.00</div>
-                        <p class="card-text text-light">Classic Italian style cappuccino with perfectly steamed milk and rich espresso base.
-                        </p>
-                        <ul class="feature-list mb-3">
-                            <li class="feature-item">Perfect foam</li>
-                            <li class="feature-item">Double shot</li>
-                            <li class="feature-item">Italian style</li>
-                        </ul>
-                        <button class="btn btn-more-info w-100">More info</button>
+        <div class="container">
+            <div class="row g-4">
+                {% for item in menu_items %}
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100">
+                        {% if item.is_popular %}
+                        <div class="position-relative">
+                            <img src="{{ item.image }}" class="card-img-top" alt="{{ item.name }}">
+                            <span class="popular-badge">Popular</span>
+                        </div>
+                        {% else %}
+                        <img src="{{ item.image }}" class="card-img-top" alt="{{ item.name }}">
+                        {% endif %}
+                        <div class="card-body">
+                            <h5 class="card-title">{{ item.name }}</h5>
+                            <div class="price mb-2">${{ "%.2f"|format(item.price) }}</div>
+                            <p class="card-text">{{ item.description }}</p>
+                            <ul class="features">
+                                {% for feature in item.features %}
+                                <li class="feature-item">{{ feature }}</li>
+                                {% endfor %}
+                            </ul>
+                            <button class="btn-more-info">More info</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Macha Latte -->
-            <div class="col-md-6 col-lg-3">
-                <div class="card h-100">
-                    <img src="https://res.cloudinary.com/dx2gssfoi/image/upload/c_crop,ar_3:4/v1730311221/pexels-minan1398-911810_beincj.jpg"
-                        class="card-img-top" alt="Matcha Latte">
-                    <div class="card-body">
-                        <h5 class="card-title">Matcha Latte</h5>
-                        <div class="price mb-2">$4.75</div>
-                        <p class="card-text text-light">Premium Japanese matcha green tea with steamed milk for a healthy alternative..</p>
-                        <ul class="feature-list mb-3">
-                            <li class="feature-item">Organic matcha</li>
-                            <li class="feature-item">Antioxidant rich/li>
-                            <li class="feature-item">Smooth taste</li>
-                        </ul>
-                        <button class="btn btn-more-info w-100">More info</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Vanilla Frappuccino -->
-            <div class="col-md-6 col-lg-3">
-                <div class="card h-100">
-                    <div class="position-relative">
-                        <img src="https://res.cloudinary.com/dx2gssfoi/image/upload/c_crop,ar_3:4/v1730311392/pexels-mlkbnl-11976949_jvy0db.jpg"
-                            class="card-img-top" alt="Vanilla Frappuccino">
-                        <span class="popular-badge">Popular</span>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Vanilla Frappuccino</h5>
-                        <div class="price mb-2">$5.25</div>
-                        <p class="card-text text-light">Blended iced coffee with sweet vanilla syrup, topped with whipped cream.
-                        </p>
-                        <ul class="feature-list mb-3">
-                            <li class="feature-item">Vanilla flavor</li>
-                            <li class="feature-item">Whipped cream</li>
-                            <li class="feature-item">Blended ice</li>
-                        </ul>
-                        <button class="btn btn-more-info w-100">More info</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Caramel Macchiato -->
-            <div class="col-md-6 col-lg-3">
-                <div class="card h-100">
-                    <div class="position-relative">
-                        <img src="https://res.cloudinary.com/dx2gssfoi/image/upload/c_crop,ar_3:4/v1730311651/pexels-freestocks-214333_o3oynr.jpg"
-                            class="card-img-top" alt="Caramel Macchiato">
-                        <span class="popular-badge">Popular</span>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Caramel Macchiato</h5>
-                        <div class="price mb-2">$4.75</div>
-                        <p class="card-text text-light"> Smooth espresso and steamed milk combined with sweet caramel syrup for a delightful treat.
-                        </p>
-                        <ul class="feature-list mb-3">
-                            <li class="feature-item">Caramel drizzle</li>
-                            <li class="feature-item">Vanilla syrup<</li>
-                            <li class="feature-item">Espresso mark</li>
-                        </ul>
-                        <button class="btn btn-more-info w-100">More info</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Black Coffee -->
-            <div class="col-md-6 col-lg-3">
-                <div class="card h-100">
-                    <div class="position-relative">
-                        <img src="https://res.cloudinary.com/dx2gssfoi/image/upload/c_crop,ar_3:4/v1730234044/pexels-shameel-mukkath-3421394-5169109_gc9bnx.jpg"
-                            class="card-img-top" alt="Black Coffee">
-                        <span class="popular-badge">Popular</span>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Black Coffee</h5>
-                        <div class="price mb-2">$1.20</div>
-                        <p class="card-text text-light">Our preferred, straightforward and unique method of developing
-                            cool coffee.</p>
-                        <ul class="feature-list mb-3">
-                            <li class="feature-item">Pure flavor</li>
-                            <li class="feature-item">Premium beans</li>
-                            <li class="feature-item">Perfect temperature</li>
-                        </ul>
-                        <button class="btn btn-more-info w-100">More info</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Iced Americano -->
-            <div class="col-md-6 col-lg-3">
-                <div class="card h-100">
-                    <img src="https://res.cloudinary.com/dx2gssfoi/image/upload/c_crop,ar_3:4/v1730233597/pexels-alohaphotostudio-13689963_xbr5n4.jpg"
-                        class="card-img-top" alt=" Iced Americano">
-                    <div class="card-body">
-                        <h5 class="card-title">Iced Americano</h5>
-                        <div class="price mb-2">$3.50</div>
-                        <p class="card-text text-light">Chilled espresso topped with cold water and ice for a refreshing coffee experience.
-                        </p>
-                        <ul class="feature-list mb-3">
-                            <li class="feature-item">Extra cold</li>
-                            <li class="feature-item">Double shot</li>
-                            <li class="feature-item">No sugar</li>
-                        </ul>
-                        <button class="btn btn-more-info w-100">More info</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Espresso -->
-            <div class="col-md-6 col-lg-3">
-                <div class="card h-100">
-                    <img src="https://res.cloudinary.com/dx2gssfoi/image/upload/c_crop,ar_3:4/v1730310458/pexels-jwmedia-997656_fxmymz.jpg"
-                        class="card-img-top" alt="Espresso">
-                    <div class="card-body">
-                        <h5 class="card-title">Espresso</h5>
-                        <div class="price mb-2">$1.20</div>
-                        <p class="card-text text-light">Enjoy a cup of finely brewed espresso from our unique single origin selection for a refreshing start.</p>
-                        <ul class="feature-list mb-3">
-                            <li class="feature-item">Rich taste</li>
-                            <li class="feature-item">Full aroma</li>
-                            <li class="feature-item">Single shot</li>
-                        </ul>
-                        <button class="btn btn-more-info w-100">More info</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Mocaccino -->
-            <div class="col-md-6 col-lg-3">
-                <div class="card h-100">
-                    <img src="https://res.cloudinary.com/dx2gssfoi/image/upload/c_crop,ar_3:4/v1730310060/pexels-chevanon-312418_1_tr4uyn.jpg"
-                        class="card-img-top" alt="Mocaccino">
-                    <div class="card-body">
-                        <h5 class="card-title">Mocaccino</h5>
-                        <div class="price mb-2">$3.70</div>
-                        <p class="card-text text-light">Savor our creamy deluxe cappuccino, crafted with premium milk and freshly ground coffee beans.</p>
-                        <ul class="feature-list mb-3">
-                            <li class="feature-item">Chocolate flavor</li>
-                            <li class="feature-item">Creamy milk</li>
-                            <li class="feature-item">Rich espresso</li>
-                        </ul>
-                        <button class="btn btn-more-info w-100">More info</button>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
-    </div>
-
-
     </main>
-    <footer>
-        <p>Developed and maintained by <a href="https://github.com/krolininha" target="_blank" >Ana C. Santos</a> from the FrauenLoop course</p>
-    </footer>
-    
+    {% endblock %}
 </body>
 
 </html>
