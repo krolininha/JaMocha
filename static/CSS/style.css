@@ -13,7 +13,7 @@ body {
   font-style: normal;
   color: white;
   padding-top: 100px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.92), rgba(0, 0, 0, 0.87)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.92), rgba(0, 0, 0, 0.78)),
   url('https://res.cloudinary.com/dx2gssfoi/image/upload/v1730397151/pexels-nietjuh-796609_v8wev7.jpg');
   background-size: cover;
   background-position: center;
@@ -32,6 +32,11 @@ body::before {
   background: linear-gradient(45deg, rgba(0,0,0,0.7), transparent);
   pointer-events: none;
   z-index: -1;
+}
+dl, ol, ul {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  display: inline-block;
 }
 
 footer{
@@ -182,7 +187,7 @@ p {
 /* Cards e Elementos de Interface */
 /* OURCOFFEE AND INDEX / CARROUSEL */
 .col-md-5 {
-  text-align: justify;
+  text-align: center;
 }
 
 /* OURCOFFEE INDEX ABOUTUS */
@@ -225,7 +230,10 @@ p {
   transition: transform 0.3s ease, border-color 0.3s;
   background-color: rgba(8, 8, 8, 0.85);
   backdrop-filter: blur(5px);
+  display: flex;
+  flex-direction: column;
 }
+
 
 .card:hover {
   transform: translateY(-5px);
@@ -238,28 +246,48 @@ p {
   color: white;
   font-weight: bold;
 }
+.card-text {
+  color: rgba(255, 255, 255, 0.448);
+  text-align:center;
+}
+.card-body{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  
+}
 
 .feature-list {
   list-style: none;
   padding-left: 0;
+
 }
 
 .feature-item {
   color: #b0b0b0;
   margin-bottom: 8px;
+  text-align: start;
+
 }
 
 .feature-item::before {
   content: "✓";
   color: #eec098;
   margin-right: 8px;
+
 }
+
 
 .btn-more-info {
   background: transparent;
   border: 1px solid #333;
   color: white;
   transition: all 0.3s ease;
+  padding: 10px 20px;
+  margin-top: auto; /* Empurra o botão para o final */
+  width: fit-content; /* Ajusta a largura ao conteúdo */
+  align-self: center; /* Centraliza horizontalmente */
 }
 
 .btn-more-info:hover {
@@ -381,6 +409,7 @@ margin: 10px 0;
   justify-content: center;
   gap: 20px; /*ou 15px*/
   margin-top: 30px;
+  
 }
 
 .social-media img {
@@ -388,10 +417,16 @@ margin: 10px 0;
   height: 40px; /* ou 30px */
   transition: transform 0.3s;
   border-radius: 50%;
+  box-shadow: 2px 2px 5px rgba(255, 255, 255, 0.596);
+  box-sizing: border-box;
+  
 }
 
 .social-media img:hover {
   transform: translateY(-5px);
+  border: 2px solid rgba(255, 255, 255, 0.604);
+  box-shadow: 5px 5px 10px rgba(254, 254, 254, 0.477);
+  transition: transform 0.3s, border;
 }
 
 /* Benefits Section */
