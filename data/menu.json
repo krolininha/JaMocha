@@ -34,7 +34,7 @@
         },
         {
             "name": "Black Coffee",
-            "price": 1.20,
+            "price": 2.70,
             "description": "Our preferred, straightforward and unique method of developing cool coffee.",
             "features": ["Pure flavor", "Premium beans", "Perfect temperature"],
             "image": "https://res.cloudinary.com/dx2gssfoi/image/upload/c_crop,ar_3:4/v1730234044/pexels-shameel-mukkath-3421394-5169109_gc9bnx.jpg",
@@ -50,7 +50,7 @@
         },
         {
             "name": "Espresso",
-            "price": 1.20,
+            "price": 2.20,
             "description": "Enjoy a cup of finely brewed espresso from our unique single origin selection for a refreshing start.",
             "features": ["Rich taste", "Full aroma", "Single shot"],
             "image": "https://res.cloudinary.com/dx2gssfoi/image/upload/c_crop,ar_3:4/v1730310458/pexels-jwmedia-997656_fxmymz.jpg",
@@ -63,6 +63,38 @@
             "features": ["Chocolate flavor", "Creamy milk", "Rich espresso"],
             "image": "https://res.cloudinary.com/dx2gssfoi/image/upload/c_crop,ar_3:4/v1730310060/pexels-chevanon-312418_1_tr4uyn.jpg",
             "is_popular": false
+        },
+        {
+            "name": "Chocolate Muffin",
+            "price": 3.50,
+            "description": "Indulgent double chocolate muffin made with premium cocoa and chocolate chips, freshly baked every morning.",
+            "features": ["Fresh baked", "Double chocolate", "Moist texture"],
+            "image": "https://res.cloudinary.com/dx2gssfoi/image/upload/c_crop,ar_3:4/v1731336989/pexels-anete-lusina-4792413_mjf1st.jpg",
+            "is_popular": true
+        },
+        {
+            "name": "Butter Croissant",
+            "price": 3.25,
+            "description": "Traditional French butter croissant with a flaky, golden-brown crust and soft, layered interior.",
+            "features": ["Handmade daily", "Pure butter", "Flaky layers"],
+            "image": "https://res.cloudinary.com/dx2gssfoi/image/upload/c_crop,ar_3:4/v1731337120/pexels-elkady-3892469_ug15t6.jpg",
+            "is_popular": true
+        },
+        {
+            "name": "Cinnamon Roll",
+            "price": 4.00,
+            "description": "Soft, swirled pastry filled with cinnamon-sugar and topped with chocolate cream.",
+            "features": ["House-made frosting", "Warm served", "Rich cinnamon"],
+            "image": "https://res.cloudinary.com/dx2gssfoi/image/upload/c_crop,ar_3:4/v1731337590/pexels-pixabay-267308_lxr2qv.jpg",
+            "is_popular": false
+        },
+        {
+            "name": "Bagel Bacon & Egg",
+            "price": 6.50,
+            "description": "Freshly toasted bagel filled with crispy bacon, fried egg, melted cheese, and signature sauce.",
+            "features": ["Premium bacon", "Free-range egg", "Artisanal bagel"],
+            "image": "https://res.cloudinary.com/dx2gssfoi/image/upload/c_crop,ar_3:4/v1731337805/pexels-kelly-1179532-14300536_ai5piv.jpg",
+            "is_popular": true
         }
     ]
 }

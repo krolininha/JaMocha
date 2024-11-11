@@ -11,10 +11,15 @@ app = Flask(__name__)
 
 # Function JSON
 def load_menu():
-    json_path = os.path.join(app.root_path, 'data', 'menu.json')
+    json_path = os.path.join(app.root_path, 'data', 'menu.json') # safe way to json
     with open(json_path, 'r') as file:
         data = json.load(file)
     return data['menu_items']
+#json_path = app.root_path + '/data/menu.json'  (Can fail in Windows)
+
+
+
+# Route created
 
 @app.route("/")
 def homepage():
