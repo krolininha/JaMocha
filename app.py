@@ -19,6 +19,7 @@ def load_menu():
 
 
 
+
 # Route created
 
 @app.route("/")
