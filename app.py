@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+from flask_sqlalchemy import SQLAlchemy
 import json
 import os
 
@@ -17,6 +18,18 @@ def load_menu():
     return data['menu_items']
 #json_path = app.root_path + '/data/menu.json'  (Can fail in Windows)
 
+# models.py
+
+db = SQLAlchemy()
+
+class MenuItem(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100), nullable=False)
+    price = db.Column(db.Float, nullable=False)
+    description = db.Column(db.Text, nullable=False)
+    features = db.Column(db.JSON)
+    image = db.Column(db.String(255))
+    is_popular = db.Column(db.Boolean, default=False)
 
 
 
@@ -47,4 +60,4 @@ def aboutus():
 if __name__ == "__main__":
     app.run(debug=True)
 
-# Server heroku?
+# Server heroku must pay, better Render....I will learn how it works!!
