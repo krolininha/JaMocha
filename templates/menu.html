@@ -16,7 +16,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Link Jquery End-->
-    <title>JaMocha</title> 
+    <title>JaMocha</title>
     <link rel="stylesheet" href="../static/CSS/style.css">
     <!--Googlefont beginn-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,42 +35,41 @@
         <h1>Best Selling Item</h1>
 
     </header>
-        <main>
-            <p>
-                Our preferred, straightforward and also unique method of developing cool coffee.
-            </p>
-            <!-- Menu Items -->
-            <div class="container">
-                <div class="row g-4">
-                    {% for item in menu_items %}
-                    <div class="col-md-6 col-lg-3">
-                        <div class="card h-100">
-                            {% if item.is_popular %}
-                            <div class="position-relative">
-                                <img src="{{ item.image }}" class="card-img-top" alt="{{ item.name }}">
-                                <span class="popular-badge">Popular</span>
-                            </div>
-                            {% else %}
+    <main>
+        <p>
+            Our preferred, straightforward and also unique method of developing cool coffee.
+        </p>
+        <!-- Menu Items -->
+        <div class="container">
+            <div class="row g-4">
+                {% for item in menu_items %}
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100">
+                        {% if item.is_popular %}
+                        <div class="position-relative">
                             <img src="{{ item.image }}" class="card-img-top" alt="{{ item.name }}">
-                            {% endif %}
-                            <div class="card-body">
-                                <h5 class="card-title">{{ item.name }}</h5>
-                                <div class="price mb-2">${{ "%.2f"|format(item.price) }}</div>
-                                <p class="card-text">{{ item.description }}</p>
-                                <ul class="features">
-                                    {% for feature in item.features %}
-                                    <li class="feature-item">{{ feature }}</li>
-                                    {% endfor %}
-                                </ul>
-                                <button class="btn-more-info">More info</button>
-                            </div>
+                            <span class="popular-badge">Popular</span>
+                        </div>
+                        {% else %}
+                        <img src="{{ item.image }}" class="card-img-top" alt="{{ item.name }}">
+                        {% endif %}
+                        <div class="card-body">
+                            <h5 class="card-title">{{ item.name }}</h5>
+                            <div class="price mb-2">${{ "%.2f"|format(item.price) }}</div>
+                            <p class="card-text">{{ item.description }}</p>
+                            <ul class="features">
+                                {% for feature in item.get_features_list() %}
+                                <li class="feature-item">{{ feature }}</li>
+                                {% endfor %}
+                            </ul>
+                            <button class="btn-more-info">More info</button>
                         </div>
                     </div>
-                    {% endfor %}
                 </div>
+                {% endfor %}
             </div>
-        </main>
-    {% endblock %}
+        </div>
+        {% endblock %}
 </body>
 
 </html>
