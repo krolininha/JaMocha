@@ -56,49 +56,21 @@
             <hr class="my-4" /> <!-- Reviews Part-->
             <section class="testimonials bg-dark text-light">
                 <div class="container">
-                    <h2 class="text-center mb-5 review-customer">What Our Customers Say
-                    </h2>
+                    <h2 class="text-center mb-5 review-customer">What Our Customers Say</h2>
                     <div class="row">
+                        {% for testimonial in testimonials %}
                         <div class="col-md-4 mb-4">
                             <div class="card bg-dark text-light border-secondary h-100">
                                 <div class="card-body">
                                     <div class="d-flex align-items-center mb-3">
-                                        <img src="https://res.cloudinary.com/dx2gssfoi/image/upload/t_gast/v1728913742/matheus-ferrero-pg_WCHWSdT8-unsplash_p2rahz.jpg"
-                                            class="rounded-circle me-3" alt="Sarah M." width="64" height="64">
-                                        <h5 class="card-title mb-0" style="color: #d2691e;">Sarah M.</h5>
+                                        <img src="{{ testimonial.image }}" class="rounded-circle me-3" width="64" height="64">
+                                        <h5 class="card-title mb-0" style="color: #d2691e;">{{ testimonial.name }}</h5>
                                     </div>
-                                    <p class="card-text">"The best coffee I've ever had! The atmosphere is perfect for
-                                        work or catching up with friends."</p>
+                                    "{{ testimonial.text }}"
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4 mb-4">
-                            <div class="card bg-dark text-light border-secondary h-100">
-                                <div class="card-body">
-                                    <div class="d-flex align-items-center mb-3">
-                                        <img src="https://res.cloudinary.com/dx2gssfoi/image/upload/t_gast/v1728914168/elizeu-dias-2EGNqazbAMk-unsplash_fjrq9i.jpg"
-                                            class="rounded-circle me-3" alt="Mike T." width="64" height="64">
-                                        <h5 class="card-title mb-0" style="color: #d2691e;">Mike T.</h5>
-                                    </div>
-                                    <p class="card-text">"JaMocha's lattes are out of this world. I come here every
-                                        morning before work."</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-4">
-                            <div class="card bg-dark text-light border-secondary h-100">
-                                <div class="card-body">
-                                    <div class="d-flex align-items-center mb-3">
-                                        <img src="https://res.cloudinary.com/dx2gssfoi/image/upload/t_gast/v1728913959/caique-nascimento-KJE--xk4AWE-unsplash_tusnce.jpg"
-                                            class="rounded-circle me-3" alt="Emily R." width="64" height="64">
-                                        <h5 class="card-title mb-0" style="color: #d2691e;">Emily R.</h5>
-                                    </div>
-                                    <p class="card-text">"Great service, cozy environment, and delicious pastries. A
-                                        hidden gem in the city!"
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </section>
