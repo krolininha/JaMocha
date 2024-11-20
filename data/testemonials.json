@@ -1,0 +1,54 @@
+{
+    "testimonials": [
+        {
+            "name": "Sarah M.",
+            "image": "https://res.cloudinary.com/dx2gssfoi/image/upload/t_gast/v1728913742/matheus-ferrero-pg_WCHWSdT8-unsplash_p2rahz.jpg",
+            "text": "The best coffee I've ever had! The atmosphere is perfect for work or catching up with friends."
+        },
+        {
+            "name": "Mike T.",
+            "image": "https://res.cloudinary.com/dx2gssfoi/image/upload/t_gast/v1728914168/elizeu-dias-2EGNqazbAMk-unsplash_fjrq9i.jpg",
+            "text": "JaMocha's lattes are out of this world. I come here every morning before work."
+        },
+        {
+            "name": "Emily R.",
+            "image": "https://res.cloudinary.com/dx2gssfoi/image/upload/t_gast/v1728913959/caique-nascimento-KJE--xk4AWE-unsplash_tusnce.jpg",
+            "text": "Great service, cozy environment, and delicious pastries. A hidden gem in the city!"
+        },
+        {
+            "name": "John D.",
+            "image": "https://res.cloudinary.com/dx2gssfoi/image/upload/t_exercicio/v1732123185/pexels-maumascaro-824125_yquxki.jpg",
+            "text": "The Black Coffee here is simply unmatched. Rich flavor and perfect temperature every time."
+        },
+        {
+            "name": "Maria S.",
+            "image": "https://res.cloudinary.com/dx2gssfoi/image/upload/t_exercicio/v1732123770/pexels-jay-randhawa-368310811-29477124_qdqwd9.jpg",
+            "text": "Love their Matcha Latte! The staff is always friendly and welcoming."
+        },
+        {
+            "name": "David L.",
+            "image": "https://res.cloudinary.com/dx2gssfoi/image/upload/t_exercicio/v1732123518/pexels-justin-shaifer-501272-1222271_nm6egb.jpg",
+            "text": "The Butter Croissant is heavenly! Perfectly flaky and buttery."
+        },
+        {
+            "name": "Anna P.",
+            "image": "https://res.cloudinary.com/dx2gssfoi/image/upload/t_exercicio/v1732124014/pexels-rachel-claire-6146148_tlvsi8.jpg",
+            "text": "Best coffee shop in town! The Caramel Macchiato is my favorite."
+        },
+        {
+            "name": "Tom H.",
+            "image": "https://res.cloudinary.com/dx2gssfoi/image/upload/t_exercicio/v1732124365/pexels-kawerodriguess-29084948_1_zl6z6n.jpg",
+            "text": "Amazing Bagel Bacon & Egg! Perfect breakfast spot."
+        },
+        {
+            "name": "Lisa M.",
+            "image": "https://res.cloudinary.com/dx2gssfoi/image/upload/t_exercicio/v1732124199/pexels-ketut-subiyanto-4429513_iq9gsr.jpg",
+            "text": "The Vanilla Frappuccino here is the best I've ever had!"
+        },
+        {
+            "name": "Carlos R.",
+            "image": "https://res.cloudinary.com/dx2gssfoi/image/upload/t_exercicio/v1732124440/pexels-ali-ahmed-83499412-20340066_gopywr.jpg",
+            "text": "Great place to work remotely. Fast WiFi and excellent coffee!"
+        }
+    ]
+}
