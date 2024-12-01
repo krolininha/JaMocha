@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
-from datetime import datetime
+from datetime import datetime, timezone
 import sqlite3
 import random
 import json
@@ -25,14 +25,14 @@ class Products(db.Model):
     features = db.Column(db.String(255))
     image = db.Column(db.String(255))
     is_popular = db.Column(db.Boolean, default=False)
-    created_at = db.Column(db.DateTime, default=datetime.utcnow)
-
+    created_at = db.Column(db.DateTime, default=datetime.now(timezone.utc))
+#method Self to export
     def get_features_list(self):
         return [feature.strip() for feature in self.features.split(',')]
 
 def init_db():
     with app.app_context():
-        # Cria as tabelas
+        # Tables create
         db.create_all()
 
         if Products.query.count() == 0:
@@ -135,10 +135,10 @@ def init_db():
                 )
             ]
             
-            # Adiciona os produtos ao banco de dados
+            # Add Products in Datebase
             db.session.add_all(products)
             db.session.commit()
-            print("Banco de dados inicializado com sucesso!")
+            print("Database initialized successfully!")
 
 
 # Route created
@@ -153,7 +153,7 @@ def homepage():
 @app.route("/menu")
 def menu():
     menu_items = Products.query.all()
-    print("Produtos encontrados:", len(menu_items))
+    print("Products found:", len(menu_items))
     return render_template("menu.html", menu_items=menu_items)
 
 
@@ -170,7 +170,7 @@ def aboutus():
 
 # Deploy
 if __name__ == "__main__":
-    init_db()  # Inicializa o banco de dados
-    app.run(debug=True)
+    init_db()  # Initialize DB
+    app.run(debug=True, port=5001)
 
 # Server heroku must pay, better Render....I will learn how it works!!
