@@ -166,11 +166,16 @@ def aboutus():
     return render_template("aboutus.html")
 
 
+# For Render deploy (Gunicorn will use this)
+init_db()
 
 
-# Deploy
+# Run only when running locally
 if __name__ == "__main__":
-    init_db()  # Initialize DB
+    init_db()
     app.run(debug=True, port=5001)
+
+
+
 
 # Server heroku must pay, better Render....I will learn how it works!!
