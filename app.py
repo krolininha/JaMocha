@@ -13,6 +13,8 @@ app = Flask(__name__)
 # Function --> What you wanna to show im webpage
 # templates --> Stay all html
 basedir = os.path.abspath(os.path.dirname(__file__))
+instance_path = os.path.join(basedir, 'instance')
+os.makedirs(instance_path, exist_ok=True)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'instance', 'jamocha.db')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
@@ -164,11 +166,6 @@ def ourcoffee():
 @app.route("/aboutus")
 def aboutus():
     return render_template("aboutus.html")
-
-
-# For Render deploy (Gunicorn will use this)
-init_db()
-
 
 # Run only when running locally
 if __name__ == "__main__":
